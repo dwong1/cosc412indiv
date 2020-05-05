@@ -25,7 +25,7 @@ def input():
 
 @app.route('/output', methods=['GET'])
 def output():
-    name = request.args.get('character_name')
+    name = request.args.get('character_name').split("'")[1]
     value = create_pc()
     return render_template('output.html', title='Output', name=name, result=value)
 
